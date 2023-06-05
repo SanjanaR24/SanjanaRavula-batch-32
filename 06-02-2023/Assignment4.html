@@ -1,0 +1,70 @@
+<html>
+    <head></head>
+    <script>
+var myProfile={
+    firstName: 'Sanjana',
+    lastName: 'Ravula',
+    Dob: '24-03-1998',
+    emailId: 'sanjanaravula00@gmail.com',
+    gender: 'Female',
+    height: '170cm',
+    address: '3627 Gilham road Apt 55',
+    phnNum: '8166027800',
+    education:'Masters',
+    hobbies: ["reading","cooking",{sports:{type:'badminton',achievements:'blah',xyz:'abc'}}]
+}
+var newList;
+printArray();
+var newElement=['swimming'];
+console.log('New Element to be added is: ',newElement);
+var element=myProfile.hobbies;
+addElement(newElement);
+
+function printArray()
+{
+   console.log('Existing array is:',element);
+}
+function addElement(a)
+{
+newList= [...element, ...newElement];
+console.log('New array is :',newList);
+ }
+
+var elementToBeRemoved='cooking';
+//var elementObjec=element.(elementToBeRemoved => typeof elementToBeRemoved === 'object' && item.hasOwnProperty(elementToBeRemoved));
+//console.log('element type is', elementObjec);
+
+//     var index=element.splice(index,1);
+// console.log('element to be removed is a object and it is',elementToBeRemoved);
+// element.splice(index, 1); 
+// console.log('New list after the deletion is:', element);
+
+delete myProfile.hobbies.elementToBeRemoved;
+log(myProfile.hobbies);
+    deleteElement(elementToBeRemoved);
+function deleteElement(elementToBeRemoved)
+{
+    console.log('new list is', newList);
+   var index=newList.indexOf(elementToBeRemoved);   
+    console.log("index of the element to be removed is",index);
+newList.splice(index, 1); 
+console.log('The element removed is', elementToBeRemoved);
+console.log('New list after the deletion is:',newList );
+}
+
+
+
+function log(v){
+    console.log(v)
+}
+   
+    </script>s
+    <body>
+        <h1> JAVA full stack Assignment-2 </h1>
+        <div>
+            <p> </p>
+           <!-- <div class="circle-container">
+            <img src="/Users/sanjanaravula/Desktop/Assignments/photo.jpg" alt="My picture" width="250" height="250", style="border-radius: 50%";></div>
+            </div>-->
+    </body>
+</html>`
