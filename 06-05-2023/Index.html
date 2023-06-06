@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script>
+        function display(Idname){
+            const input=document.getElementById(Idname);
+            const inputRef=input.value;
+            log(inputRef);
+            document.getElementById("result").innerHTML=inputRef;
+        }
+
+function log(v){
+    console.log(v);
+}
+    </script>
+</head>
+<body>
+First Name: <input type="text" id="fname">
+<button onclick="display('fname')">Submit</button><br><br>
+Last Name: <input type="text" id="lname">
+<button onclick="display('lname')">Submit</button><br><br>
+Date of Birth: <input type="date" id="dob">
+<button onclick="display('dob')">Submit</button><br><br>
+E-mail: <input type="text" id="email">
+<button onclick="display('email')">Submit</button><br><br>
+<h1> Your Profile details are:</h1>
+<p id="result"></p>
+</body>
+</html>
