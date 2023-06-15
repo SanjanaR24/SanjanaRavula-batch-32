@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Displaying Result in HTML</title>
+    <script>
+        var env, amount, sendAmount;
+        amount = 90;
+
+        function processInput() {
+            var input = document.getElementById('myInput').value;
+            console.log('Input:', input);
+
+            switch (input) {
+                case 'dev':
+                    sendAmount = amount + (amount * 10) / 100;
+                    document.getElementById('result').innerHTML = sendAmount;
+                    break;
+                case 'stage':
+                    sendAmount = amount + (amount * 30) / 100;
+                    document.getElementById('result').innerHTML = sendAmount;
+                    break;
+                case 'test':
+                    sendAmount = amount + (amount * 20) / 100;
+                    document.getElementById('result').innerHTML = sendAmount;
+                    break;
+                case 'prod':
+                    sendAmount = amount + (amount * 5) / 100;
+                    document.getElementById('result').innerHTML = sendAmount;
+                    break;
+                default:
+                    document.getElementById('result').innerHTML = "Invalid Input";
+            }
+            log(sendAmount);
+        }
+
+        function log(v) {
+            document.getElementById('logResult').innerHTML = v;
+        }
+    </script>
+</head>
+<body>
+    <label for="myInput">Enter a value:</label>
+    <input type="text" id="myInput">
+    <button onclick="processInput()">Process</button>
+
+    <p>Amount to be sent is: <span id="result"></span></p>
+    <p id="logResult"></p>
+</body>
+</html>

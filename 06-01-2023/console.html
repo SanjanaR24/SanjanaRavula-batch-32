@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Console Output Example</title>
+</head>
+<body>
+  <h1>Console Output</h1>
+  <div id="console-output"></div>
+
+  <script>
+    // Redirect console.log output to a specified HTML element
+    (function() {
+      var oldLog = console.log;
+      console.log = function(message) {
+        var consoleOutput = document.getElementById('console-output');
+        consoleOutput.innerHTML += message + '<br>';
+        oldLog.apply(console, arguments);
+      };
+    })
+  </script>
+</body>
+</html>

@@ -11,7 +11,7 @@ var myProfile={
     address: '3627 Gilham road Apt 55',
     phnNum: '8166027800',
     education:'Masters',
-    hobbies: ["reading","cooking",{sports:{type:'badminton',achievements:'blah'}},"Cycling"]
+    hobbies: ["reading","cooking",{sports:{type:'badminton',achievements:'blah',xyz:'abc'}}]
 }
 function log(v){
     console.log(v)
@@ -19,7 +19,15 @@ function log(v){
    // log(myProfile.gender);
    // log(myProfile.hobbies[2]);
 
-    log(myProfile.hobbies[3]);
+    //log(myProfile.hobbies[3]);
+    var l=myProfile.hobbies.length;
+    console.log(l);
+    var element=myProfile.hobbies[l-1]
+    log(element); // Prints the last element
+    //var allKeys= Object.keys(myProfile);
+    //log(allKeys);
+
+
 
     </script>
     <body>

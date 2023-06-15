@@ -14,58 +14,47 @@ var myProfile={
     hobbies: ["reading","cooking",{sports:{type:'badminton',achievements:'blah',xyz:'abc'}}]
 }
 var newList;
-printArray();
-var newElement=['swimming'];
-console.log('New Element to be added is: ',newElement);
-var element=myProfile.hobbies;
-addElement(newElement);
-//console.log('Existing array is:',element);
-function printArray()
+var element= myProfile.hobbies;
+function printarray()
 {
-    var element=myProfile.hobbies;
-   console.log('Existing array is:',element);
+    log(element);
 }
-function addElement(a)
+
+printarray();
+var newElement=[{books:{type:'oldbooks', genre:'thriller'}}];
+addHobbies(newElement);
+
+
+function addHobbies(newElement)
 {
-newList= [...element, ...newElement];
-console.log('New array is :',newList);
- }
+ newList= [...element, ...newElement];
+log(newList);
+   // element.push(newElement);
+    //log(element);
+}
 
-var elementToBeRemoved='cooking';
-//var elementObjec=element.(elementToBeRemoved => typeof elementToBeRemoved === 'object' && item.hasOwnProperty(elementToBeRemoved));
-//console.log('element type is', elementObjec);
+elementToBeDeleted=[{sports:{type:'badminton',achievements:'blah',xyz:'abc'}}];
+deleteHobbies(elementToBeDeleted);
 
-//     var index=element.splice(index,1);
-// console.log('element to be removed is a object and it is',elementToBeRemoved);
-// element.splice(index, 1); 
-// console.log('New list after the deletion is:', element);
-
-delete myProfile.hobbies.elementToBeRemoved;
-log(myProfile.hobbies);
-    deleteElement(elementToBeRemoved);
-function deleteElement(elementToBeRemoved)
-{
-    console.log('new list is', newList);
-   var index=newList.indexOf(elementToBeRemoved);   
-    console.log("index of the element to be removed is",index);
-newList.splice(index, 1); 
-console.log('The element removed is', elementToBeRemoved);
-console.log('New list after the deletion is:',newList );
+function deleteHobbies(elementToBeDeleted){
+    var index=newList.indexOf(elementToBeDeleted);
+    newList.splice(index,1);
+    console.log("new list is",newList);
 }
 
 
+/*var y='cooking'; 
 
+log(element);
+var result=element.findIndex(x=>typeof x==='object');  
+log(result);*/
 function log(v){
     console.log(v)
 }
    
-    </script>s
+    </script>
     <body>
         <h1> JAVA full stack Assignment-2 </h1>
-        <div>
-            <p> </p>
-           <!-- <div class="circle-container">
-            <img src="/Users/sanjanaravula/Desktop/Assignments/photo.jpg" alt="My picture" width="250" height="250", style="border-radius: 50%";></div>
-            </div>-->
+    
     </body>
 </html>`
