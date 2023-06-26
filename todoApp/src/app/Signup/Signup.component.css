@@ -1,0 +1,9 @@
+#myheader {
+    background-color: lightblue;    
+    text-align: center;
+  }
+  th {
+    padding: 25px; 
+    font-size: 30px;
+    color: white;
+  }

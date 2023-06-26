@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-Header',
-  templateUrl: './Header.component.html',
-  styleUrls: ['./Header.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
+  showText: any;
+  isLogin = false;
   constructor() { }
 
   ngOnInit() {
   }
-  login= true;
 
-  // toggleMenu(){
-  //   if(this.login){
-  //     this.login=false;
-  //   }
-  //   else{
-  //     this.login=true;
-  //   }
-//}
+  toggleMenu() {
+    this.showText = !this.showText;
+    
+  }
 }

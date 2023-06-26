@@ -1,21 +1,21 @@
-<html>
-  <head>
-    </head>
-    <body>
+<p>
+  header works!
+</p>
+<div>
+  <ul class="header">
+     <li [routerLink]="['/profile']" routerLinkActive="router-link-active" >
+        profile
+     </li>
+     <li [routerLink]="['/login']" routerLinkActive="router-link-active" >
+        Login
+     </li>
+     <!-- <li [routerLink]="['/logout']" routerLinkActive="router-link-active">
+        Logout
+     </li> -->
+     <li [routerLink]="['/signup']" routerLinkActive="router-link-active" >
+        Signup
+     </li>
     
-    <header id="myheader">
-    <table style="padding: 40px">
-      <tr><th ><b> Profile</b></th>
-      <th><b> Contact</b></th>
-      <!--<button *ngIf="login" (click)="toggleMenu()">Log In</button>
-    <button *ngIf="!login" (click)="toggleMenu()">Log Out</button>-->
-    <th><button *ngIf="login" (click)="login=!login">Log In</button>
-    <button *ngIf="!login" (click)="login=!login">Log Out</button></th>
-    <th><input type="search"> <b> Search</b></th></tr>
-    </table>
-  </header>
-    
-    
-
-</body>
-</html>
+  </ul>
+  
+  </div>

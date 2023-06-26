@@ -1,0 +1,9 @@
+<h1>Profile</h1>
+<div>Accounts</div>
+
+<app-accounts-info
+(onAccountSelect)="onAccountselectedInfo($event)" 
+[accountInfo]="profileInfo.accounts"></app-accounts-info>
+<button type="button" (click)="navigateToPage()">Log Out</button>
+    
+     
