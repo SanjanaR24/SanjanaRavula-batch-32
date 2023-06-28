@@ -8,12 +8,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only" ></span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="['/login']" routerLinkActive="router-link-active" > Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="['/profile']" routerLinkActive="router-link-active"><img src="./assets/profile2.png" class="avatar"></a>
-      </li>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-link" type="button"  *ngIf="authService.isLoggedIn" (click)='profile()'><img src="./assets/profileicon.png" alt="Logo" width="20" height="24" class="d-inline-block align-text-top" style="color: rgb(248, 244, 244);"></button>
+        <button class="btn btn-dark" type="button" *ngIf="!authService.isLoggedIn"   (click)="login()">Login</button>
+        <button class="btn btn-dark" type="button" *ngIf="authService.isLoggedIn"   (click)="logout()">Logout</button>
+        <!-- <button class="btn btn-primary" type="button" *ngIf="!authService.isLoggedIn"   (click)="signUp()"><div style="color: rgb(252, 252, 252);">Sign up</div></button> -->
+      </div>
     </ul>
   </div>
 </nav>
