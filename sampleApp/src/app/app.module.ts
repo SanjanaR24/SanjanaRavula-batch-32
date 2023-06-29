@@ -23,7 +23,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

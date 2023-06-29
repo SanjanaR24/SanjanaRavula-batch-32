@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 const routes: Routes = [{
@@ -18,8 +19,12 @@ const routes: Routes = [{
   path:'profile',
   component: ProfileComponent,
   canActivate: [AuthGuard],canDeactivate:[AuthGuard]
+},
+{
+  path:'sidebar',
+  component:SidebarComponent,
+  canActivate: [AuthGuard],canDeactivate:[AuthGuard]
 }
-
 ];
 
 @NgModule({

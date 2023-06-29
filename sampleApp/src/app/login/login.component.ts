@@ -19,18 +19,19 @@ showText=false;
   ngOnInit() { 
     console.log('aService', this.aService.isLoggedIn);
   }
-
+ 
     onLogin() {
       if (this.loginInfo.email === 'kesh@gmail.com' &&
         this.loginInfo.pwd === '200') {
           console.log('user Authenticated');
 
           this.aService.isLoggedIn = true;
-          this.router.navigate(['/profile']);
+          this.router.navigate(['/sidebar']);
       } else {
         console.log('user NOT Authenticated');
        this.aService.isLoggedIn = false;
        this.showText=true;
+       //this.toastr.error('Invalidation of elements!', 'Failure');
       //  alert('InValid details!!!')
       }
   }
