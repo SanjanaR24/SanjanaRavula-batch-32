@@ -14,5 +14,5 @@
 }
 .dropdown-group {
   display: flex;
-  justify-content:baseline;
+  justify-content:space-around;
 }
