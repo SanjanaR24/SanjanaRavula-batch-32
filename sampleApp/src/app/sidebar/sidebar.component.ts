@@ -21,7 +21,7 @@ export class SidebarComponent implements OnInit {
   selectedLeadName = '';
   filteredItems = this.items;
 
-  filterTable(): void {
+  filterTable() {
     this.filteredItems = this.items.filter(item => {
       const selectedTechnologyMatch = this.selectedTechnology ? item.technology === this.selectedTechnology : true;
       const selectedLeadNameMatch = this.selectedLeadName ? item.lead_name === this.selectedLeadName : true;
