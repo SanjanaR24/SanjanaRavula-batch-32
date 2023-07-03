@@ -6,7 +6,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
-
 const routes: Routes = [{
   path:'login',
   component: LoginComponent

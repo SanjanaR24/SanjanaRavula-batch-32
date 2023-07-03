@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,25 +14,27 @@ showText=false;
     pwd: ''
   }
   isUserLoggedIn=true;
-  constructor(private router: Router, private aService: AuthService) { }
+  constructor(private router: Router, private aService: AuthService,private snackBar:MatSnackBar) { }
 
   ngOnInit() { 
     console.log('aService', this.aService.isLoggedIn);
   }
- 
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action);
+  }
     onLogin() {
       if (this.loginInfo.email === 'kesh@gmail.com' &&
         this.loginInfo.pwd === '200') {
           console.log('user Authenticated');
 
-          this.aService.isLoggedIn = true;
+         this.aService.isLoggedIn = true;
           this.router.navigate(['/sidebar']);
       } else {
         console.log('user NOT Authenticated');
        this.aService.isLoggedIn = false;
        this.showText=true;
-       //this.toastr.error('Invalidation of elements!', 'Failure');
       //  alert('InValid details!!!')
-      }
+    
   }
   }
+}
