@@ -1,6 +1,17 @@
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Register Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+        integrity="sha512-XK3u0DP2o5vvwtfBHB2on2oQSE7NggFAP0MKj5+0qtsU0lKLpAso36ziru0UkKPeACzUcPmNRx4d8G3Orq1FOg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 <body>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"
+  integrity="sha512-2Rn7arHZTdtkGcLe0XSTkZCVpuVfAgvbOR2Eg+qxUNU0xbGEPdhsSTrJjE0Z4U73TqIZ3wMK3TMD0nCQZrc8Kg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <div class="sidebar">
     <button class="btn btn-light" type="button" (click)="isClicked=!isClicked" >Submissions</button>
   </div>
@@ -45,14 +56,38 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of filteredItems">
+    <tr *ngFor="let item of filteredItems; trackBy: trackByFullName">
+      <td>{{item.id }}</td>
       <td>{{ item.full_name }}</td>
       <td>{{ item.lead_name }}</td>
       <td>{{ item.technology }}</td>
       <td>{{ item.vendor_name }}</td>
       <td>{{ item.rate }}</td>
+      <td>
+        <button class="btn btn-primary" type="button" (click)="editItem(item)">Edit</button>
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+       Edit
+      </button> -->
+        <button class="btn btn-danger" type="button" (click)="deleteItem(item)">Delete</button>
+
+      </td>
     </tr>
+    <tr *ngIf="editingItem">
+      <td><input type="text" [(ngModel)]="editingItem.full_name" class="form-control"></td>
+      <td><input type="text" [(ngModel)]="editingItem.lead_name" class="form-control"></td>
+      <td><input type="text" [(ngModel)]="editingItem.technology" class="form-control"></td>
+      <td><input type="text" [(ngModel)]="editingItem.vendor_name" class="form-control"></td>
+      <td><input type="text" [(ngModel)]="editingItem.rate" class="form-control"></td>
+      <td>
+        <button class="btn btn-success" (click)="saveItem()">Save</button>
+        <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </td>
+    </tr>
+    
+    
   </tbody>
 </table>
 </div>
-</div>
+</div> 
+</body>
+</html>
