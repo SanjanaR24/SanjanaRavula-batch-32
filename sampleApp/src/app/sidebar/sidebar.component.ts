@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
     { id:7,full_name: 'Jahnavi', lead_name: 'Tejan', technology: 'Data Engineering',vendor_name:'Avalon software services',rate:'71/hr' },
    ];
 
+
   selectedTechnology = '';
   selectedLeadName = '';
   filteredItems = this.items;
@@ -43,7 +44,8 @@ export class SidebarComponent implements OnInit {
 
   
   saveItem(): void {
-    const index = this.items.findIndex(item => item.id === this.editingItem.id);
+    console.log("here");
+    const index = this.items.findIndex(item => item.full_name === this.editingItem.full_name);
     if (index !== -1) {
       this.items[index] = { ...this.editingItem };
       this.editingItem = null;
@@ -68,4 +70,30 @@ export class SidebarComponent implements OnInit {
   trackByFullName(index: number, item: any): number {
     return index;
   }
+
+saveNewItem(): void {
+  const newFullName = (document.getElementById('new-fullname') as HTMLInputElement).value;
+  const newLeadName = (document.getElementById('new-leadname') as HTMLInputElement).value;
+  const newTechnology = (document.getElementById('new-technology') as HTMLInputElement).value;
+  const newVendorName = (document.getElementById('new-vendorname') as HTMLInputElement).value;
+  const newRate = (document.getElementById('new-rate') as HTMLInputElement).value;
+
+  const newItem = {
+    id: this.items.length + 1,
+    full_name: newFullName,
+    lead_name: newLeadName,
+    technology: newTechnology,
+    vendor_name: newVendorName,
+    rate: newRate
+  };
+
+  this.items.push(newItem);
+  this.filteredItems = this.items;
+  (document.getElementById('new-fullname') as HTMLInputElement).value = '';
+  (document.getElementById('new-leadname') as HTMLInputElement).value = '';
+  (document.getElementById('new-technology') as HTMLInputElement).value = '';
+  (document.getElementById('new-vendorname') as HTMLInputElement).value = '';
+  (document.getElementById('new-rate') as HTMLInputElement).value = '';
+}
+
 }

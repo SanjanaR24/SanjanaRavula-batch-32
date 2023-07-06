@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [							
     AppComponent,
@@ -29,7 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
    MatSnackBarModule,
    MatFormFieldModule,
    MatPaginatorModule,
-   MatSelectModule
+   MatSelectModule,
+   BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,9 +19,7 @@ showText=false;
   ngOnInit() { 
     console.log('aService', this.aService.isLoggedIn);
   }
-  openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
-  }
+
     onLogin() {
       if (this.loginInfo.email === 'kesh@gmail.com' &&
         this.loginInfo.pwd === '200') {
@@ -33,7 +31,7 @@ showText=false;
         console.log('user NOT Authenticated');
        this.aService.isLoggedIn = false;
        this.showText=true;
-      //  alert('InValid details!!!')
+      
     
   }
   }
