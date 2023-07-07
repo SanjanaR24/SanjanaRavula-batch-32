@@ -14,13 +14,17 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SubmissionsComponent } from './Submissions/Submissions.component';
+import { StudentsComponent } from './Students/Students.component';
 @NgModule({
-  declarations: [							
+  declarations: [									
     AppComponent,
       LoginComponent,
       HeaderComponent,
       ProfileComponent,
-      SidebarComponent
+      SidebarComponent,
+      SubmissionsComponent,
+      StudentsComponent
    ],
   imports: [
     BrowserModule,

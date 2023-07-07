@@ -8,9 +8,7 @@ import { ProfileComponent } from '../profile/profile.component';
 })
 export class AuthGuard implements CanActivate,CanDeactivate<ProfileComponent> {
     constructor(public router: Router, private authService: AuthService) {}
-    // canDeactivate(component: any, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    //   throw new Error('Method not implemented.');
-    // }
+  
     canActivate() {
       const isLoggedIn = this.authService.isLoggedIn;
       console.log('isLoggedIn', isLoggedIn);

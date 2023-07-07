@@ -11,10 +11,6 @@ const routes: Routes = [{
   component: LoginComponent
 },
 {
-  path:'home',
-  component: HeaderComponent
-},
-{
   path:'profile',
   component: ProfileComponent,
   canActivate: [AuthGuard],canDeactivate:[AuthGuard]
@@ -22,6 +18,7 @@ const routes: Routes = [{
 {
   path:'sidebar',
   component:SidebarComponent,
+  
   canActivate: [AuthGuard],canDeactivate:[AuthGuard]
 }
 ];
